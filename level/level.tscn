@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cb1fdgv1qmlnl"]
+[gd_scene load_steps=7 format=3 uid="uid://cb1fdgv1qmlnl"]
 
 [ext_resource type="PackedScene" uid="uid://dfiskwbdoftdv" path="res://level/wall.tscn" id="1_7lnir"]
+[ext_resource type="Script" uid="uid://ck4wps6jxg6sp" path="res://level/level.gd" id="1_44x8d"]
 [ext_resource type="PackedScene" uid="uid://db8s4skx4jok2" path="res://level/divider.tscn" id="2_5gx2l"]
 [ext_resource type="PackedScene" uid="uid://1r0sbafi8hfx" path="res://player/player.tscn" id="3_qohg2"]
 [ext_resource type="PackedScene" uid="uid://bb2hrwta1smw" path="res://ball/ball.tscn" id="4_vkbyq"]
 [ext_resource type="PackedScene" uid="uid://dgrlq3t3ny43" path="res://level/outside_area.tscn" id="5_ktfr2"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_44x8d")
 
 [node name="Ball" parent="." instance=ExtResource("4_vkbyq")]
 position = Vector2(576, 324)
@@ -33,5 +35,27 @@ position = Vector2(-27, 322)
 [node name="OutsideAreaRight" parent="." instance=ExtResource("5_ktfr2")]
 position = Vector2(1180, 324)
 
-[connection signal="body_entered" from="OutsideAreaLeft" to="Ball" method="_on_outside_area_left_body_entered"]
-[connection signal="body_entered" from="OutsideAreaRight" to="Ball" method="_on_outside_area_right_body_entered"]
+[node name="Player1Score" type="RichTextLabel" parent="."]
+offset_left = 528.0
+offset_top = 80.0
+offset_right = 557.0
+offset_bottom = 128.0
+theme_override_font_sizes/normal_font_size = 34
+text = "0
+"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Player2Score" type="RichTextLabel" parent="."]
+offset_left = 592.0
+offset_top = 80.0
+offset_right = 621.0
+offset_bottom = 128.0
+theme_override_font_sizes/normal_font_size = 34
+text = "0
+"
+scroll_active = false
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="OutsideAreaLeft" to="." method="_on_outside_area_left_body_entered"]
+[connection signal="body_entered" from="OutsideAreaRight" to="." method="_on_outside_area_right_body_entered"]

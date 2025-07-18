@@ -1,10 +1,15 @@
 extends RigidBody2D
 
+var should_reset: bool = false
 
-func _on_outside_area_left_body_entered(body: Node2D) -> void:
-	if body.name == "Ball":
-		print("Player2 scored!")
+const INITIAL_POSITION: Vector2 = Vector2(576, 324)
 
-func _on_outside_area_right_body_entered(body: Node2D) -> void:
-	if body.name == "Ball":
-		print("Player1 scored!")
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	if should_reset:
+		var next_transform = state.get_transform()
+		
+		next_transform.origin = INITIAL_POSITION
+		
+		state.set_transform(next_transform)
+		
+		should_reset = false
