@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb1fdgv1qmlnl"]
+[gd_scene load_steps=4 format=3 uid="uid://cb1fdgv1qmlnl"]
 
 [ext_resource type="PackedScene" uid="uid://dfiskwbdoftdv" path="res://level/wall.tscn" id="1_7lnir"]
 [ext_resource type="PackedScene" uid="uid://db8s4skx4jok2" path="res://level/divider.tscn" id="2_5gx2l"]
+[ext_resource type="PackedScene" uid="uid://1r0sbafi8hfx" path="res://player/player.tscn" id="3_qohg2"]
 
 [node name="Level" type="Node2D"]
 
@@ -13,3 +14,10 @@ position = Vector2(560, 672)
 
 [node name="Divider" parent="." instance=ExtResource("2_5gx2l")]
 position = Vector2(576, 324)
+
+[node name="Player1" parent="." instance=ExtResource("3_qohg2")]
+position = Vector2(75, 324)
+
+[node name="Player2" parent="." instance=ExtResource("3_qohg2")]
+position = Vector2(1077, 324)
+is_player_1 = false
