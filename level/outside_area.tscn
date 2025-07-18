@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgrlq3t3ny43"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxbs6"]
+size = Vector2(23.3971, 48.6731)
+
+[node name="OutsideArea" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 3.14159
+scale = Vector2(1.92109, 13.3527)
+shape = SubResource("RectangleShape2D_jxbs6")

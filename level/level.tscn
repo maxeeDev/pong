@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb1fdgv1qmlnl"]
+[gd_scene load_steps=6 format=3 uid="uid://cb1fdgv1qmlnl"]
 
 [ext_resource type="PackedScene" uid="uid://dfiskwbdoftdv" path="res://level/wall.tscn" id="1_7lnir"]
 [ext_resource type="PackedScene" uid="uid://db8s4skx4jok2" path="res://level/divider.tscn" id="2_5gx2l"]
 [ext_resource type="PackedScene" uid="uid://1r0sbafi8hfx" path="res://player/player.tscn" id="3_qohg2"]
 [ext_resource type="PackedScene" uid="uid://bb2hrwta1smw" path="res://ball/ball.tscn" id="4_vkbyq"]
+[ext_resource type="PackedScene" uid="uid://dgrlq3t3ny43" path="res://level/outside_area.tscn" id="5_ktfr2"]
 
 [node name="Level" type="Node2D"]
 
@@ -25,3 +26,12 @@ position = Vector2(75, 324)
 [node name="Player2" parent="." instance=ExtResource("3_qohg2")]
 position = Vector2(1077, 324)
 is_player_1 = false
+
+[node name="OutsideAreaLeft" parent="." instance=ExtResource("5_ktfr2")]
+position = Vector2(-27, 322)
+
+[node name="OutsideAreaRight" parent="." instance=ExtResource("5_ktfr2")]
+position = Vector2(1180, 324)
+
+[connection signal="body_entered" from="OutsideAreaLeft" to="Ball" method="_on_outside_area_left_body_entered"]
+[connection signal="body_entered" from="OutsideAreaRight" to="Ball" method="_on_outside_area_right_body_entered"]
