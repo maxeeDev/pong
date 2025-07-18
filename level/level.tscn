@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb1fdgv1qmlnl"]
+
+[ext_resource type="PackedScene" uid="uid://dfiskwbdoftdv" path="res://level/wall.tscn" id="1_7lnir"]
+[ext_resource type="PackedScene" uid="uid://db8s4skx4jok2" path="res://level/divider.tscn" id="2_5gx2l"]
+
+[node name="Level" type="Node2D"]
+
+[node name="UpperWall" parent="." instance=ExtResource("1_7lnir")]
+position = Vector2(560, -24)
+
+[node name="LowerWall" parent="." instance=ExtResource("1_7lnir")]
+position = Vector2(560, 672)
+
+[node name="Divider" parent="." instance=ExtResource("2_5gx2l")]
+position = Vector2(576, 324)
