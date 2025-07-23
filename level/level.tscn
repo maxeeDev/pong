@@ -35,6 +35,10 @@ position = Vector2(-27, 322)
 [node name="OutsideAreaRight" parent="." instance=ExtResource("5_ktfr2")]
 position = Vector2(1180, 324)
 
+[node name="BallMovementLine2D" type="Line2D" parent="."]
+width = 4.0
+default_color = Color(1, 0.00999999, 0.0264997, 1)
+
 [node name="Player1Score" type="RichTextLabel" parent="."]
 offset_left = 528.0
 offset_top = 80.0
