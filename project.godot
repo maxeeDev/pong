@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Pong2"
-run/main_scene="uid://cb1fdgv1qmlnl"
+run/main_scene="uid://ci04dq4i46syq"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://globals/globals.gd"
 
 [input]
 

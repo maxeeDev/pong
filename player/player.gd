@@ -2,20 +2,24 @@ extends CharacterBody2D
 
 @export var is_player_1: bool = true
 
-const SPEED = 400
+var ball: RigidBody2D
+var direction = 0
+
+const SPEED: int = 400
+
+func _ready() -> void:
+	ball = get_parent().get_node("Ball")
 
 func _physics_process(delta: float) -> void:
-	var input_direction = 0
-	
 	if is_player_1:
-		if Input.is_action_pressed("player1_down"):
-			input_direction = 1
-		elif Input.is_action_pressed("player1_up"):
-			input_direction = -1
+		direction = get_direction(1)
+		position.y += direction * SPEED * delta
+	elif Globals.game_mode == Globals.mode.PLAYER_VS_PLAYER and not is_player_1:
+		direction = get_direction(2)
+		position.y += direction * SPEED * delta
 	else:
-		if Input.is_action_pressed("player2_down"):
-			input_direction = 1
-		elif Input.is_action_pressed("player2_up"):
-			input_direction = -1
-	
-	position.y += input_direction * SPEED * delta
+		# TODO fix perfect ai
+		position.y = ball.position.y
+
+func get_direction(player_number: int) -> int:
+	return Input.get_axis("player" + str(player_number) + "_up" ,"player" + str(player_number) + "_down")
