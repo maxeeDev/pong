@@ -61,5 +61,6 @@ text = "0
 scroll_active = false
 horizontal_alignment = 1
 
+[connection signal="body_entered" from="Divider" to="." method="_on_divider_body_entered"]
 [connection signal="body_entered" from="OutsideAreaLeft" to="." method="_on_outside_area_left_body_entered"]
 [connection signal="body_entered" from="OutsideAreaRight" to="." method="_on_outside_area_right_body_entered"]

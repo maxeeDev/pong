@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://db8s4skx4jok2"]
+[gd_scene load_steps=2 format=3 uid="uid://db8s4skx4jok2"]
 
-[node name="Divider" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0qrx"]
+size = Vector2(16, 648)
+
+[node name="Divider" type="Area2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -8.0
@@ -8,3 +11,6 @@ offset_top = -324.0
 offset_right = 8.0
 offset_bottom = 324.0
 color = Color(1, 1, 1, 0.356863)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f0qrx")
