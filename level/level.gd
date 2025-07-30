@@ -1,6 +1,7 @@
 extends Node2D
 
 const INITIAL_BALL_POSITION: Vector2 = Vector2(576,324)
+const VELOCITY_MULTIPLIER: float = 1.04
 
 var player1_score: int = 0
 var player2_score: int = 0 
@@ -33,4 +34,4 @@ func update_l2d(points: Array[Vector2]):
 
 func _on_divider_body_entered(body: Node2D) -> void:
 	if body.name == "Ball":
-		$Ball.linear_velocity *= 1.02
+		$Ball.linear_velocity *= VELOCITY_MULTIPLIER
