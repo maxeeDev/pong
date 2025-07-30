@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 		position.y += get_ai_movement_dir() * SPEED * delta
 
 func update_player_position(player_number: int, delta: float) -> void:
-	direction = Input.get_axis("player" + str(player_number) + "_up" ,"player" + str(player_number) + "_down")
+	direction = int(Input.get_axis("player" + str(player_number) + "_up" ,"player" + str(player_number) + "_down"))
 	position.y += direction * SPEED * delta
 
 # helpful video for pong ai: https://www.youtube.com/watch?v=GRgYRvv2mPY

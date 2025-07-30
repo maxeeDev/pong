@@ -14,3 +14,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		state.set_transform(next_transform)
 		
 		should_reset = false
+
+func _on_body_entered(body: Node) -> void:
+	if body.name.begins_with("Player"):
+		$HitSound.play()
